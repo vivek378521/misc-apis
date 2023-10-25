@@ -4,6 +4,11 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
+@app.get("/")
+def hello_world():
+    return {"message": "Welcome to my APIs, go to docs"}
+
+
 @app.get("/convert_ip_to_number/", response_model=None)
 def convert_ip_to_number(request: Request):
     try:
